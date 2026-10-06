@@ -2501,7 +2501,7 @@ footer p{
 
 
 <source
-    src="noor.mp3"
+    src="ini/noor.mp3.mp3"
     type="audio/mpeg">
 
 
@@ -2725,9 +2725,9 @@ footer p{
         <div class="photo-card">
 
             <img
-                src="wkwk.jpg"
+                src="ini/wkwk.jpg"
                 alt="Foto kita"
-                onclick="openImage('wkwk.jpg')"
+                onclick="openImage('ini/wkwk.jpg')"
             >
 
             <div class="photo-label">
@@ -2851,10 +2851,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('wkwkwk.jpg')">
+        onclick="openImage('ini/wkwkwk.jpg')">
 
         <img
-            src="wkwkwk.jpg"
+            src="ini/wkwkwk.jpg"
             alt="Memory 1"
             loading="lazy">
 
@@ -2863,10 +2863,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('wkwkwkw.jpg')">
+        onclick="openImage('ini/wkwkwkw.jpg')">
 
         <img
-            src="wkwkwkw.jpg"
+            src="ini/wkwkwkw.jpg"
             alt="Memory 2"
             loading="lazy">
 
@@ -2875,10 +2875,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('wkwkwkwk.jpg')">
+        onclick="openImage('ini/wkwkwkwk.jpg')">
 
         <img
-            src="wkwkwkwk.jpg"
+            src="ini/wkwkwkwk.jpg"
             alt="Memory 3"
             loading="lazy">
 
@@ -2887,10 +2887,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('haha.jpg')">
+        onclick="openImage('ini/haha.jpg')">
 
         <img
-            src="haha.jpg"
+            src="ini/haha.jpg"
             alt="Memory 4"
             loading="lazy">
 
@@ -2899,10 +2899,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('hah.jpg')">
+        onclick="openImage('ini/hah.jpg')">
 
         <img
-            src="hah.jpg"
+            src="ini/hah.jpg"
             alt="Memory 5"
             loading="lazy">
 
@@ -2911,10 +2911,10 @@ footer p{
 
     <div
         class="gallery-item"
-        onclick="openImage('ha.jpg')">
+        onclick="openImage('ini/ha.jpg')">
 
         <img
-            src="ha.jpg"
+            src="ini/ha.jpg"
             alt="Memory 6"
             loading="lazy">
 
@@ -3302,15 +3302,22 @@ function enterWebsite(){
         .then(() => {
 
             musicBtn.classList.add("playing");
-
             musicBtn.textContent = "🎵";
 
             fadeMusicIn();
 
         })
-        .catch(() => {
+        .catch((error) => {
+
+            console.error("Musik gagal diputar:", error);
 
             musicBtn.textContent = "🔇";
+
+            alert(
+                "Musik belum bisa diputar.\n\n" +
+                "Pastikan file berikut ada:\n" +
+                "ini/noor.mp3.mp3"
+            );
 
         });
 
